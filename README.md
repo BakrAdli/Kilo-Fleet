@@ -9,4 +9,14 @@ Kilo Fleet is engineered as an offline-first desktop system. Instead of relying 
 ```mermaid
 graph LR
     A[PyWebView Frontend Layer] <-->|JSON-RPC / IPC Bridge| B(Python Backend Core)
-    B <-->|Parameterized SQL Queries| C[(Local SQLite Engine)] 
+    B <-->|Parameterized SQL Queries| C[(Local SQLite Engine)]
+
+ Engineering Highlights
+Strict Type Safety: Enforced across the backend using Python typing annotations to reduce runtime errors.
+
+Transactional Integrity: Custom context managers handle SQLite connections, ensuring atomic commits and automatic rollbacks on exceptions.
+
+Decoupled Layers: Clear separation between data access objects (DAO), core validation logic, and the frontend API bridge.
+
+ Included Architectural Sample
+core_db_engine.py: Demonstrates the standardized SQLite connection manager, strict type hinting, and object-oriented error handling used across the system.
